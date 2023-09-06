@@ -17,11 +17,15 @@
     <br />
     <center><h1 id="random-website">Random Website</h1></center>
   </div>
-  <script src="ads.js"></script>
+  
   <script>
+    const timestamp = Date.now();
+    const script = document.createElement('script');
+    script.src = `ads.js?v=${timestamp}`;
+    document.head.appendChild(script);
+
     const randomWebsite = '';
     const randomWebsite = window.randomWebsite;
-
     document.getElementById('random-website').innerHTML = randomWebsite;
 </script>
 </body>
