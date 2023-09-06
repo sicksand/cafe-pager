@@ -17,12 +17,20 @@
     <br />
     <center><h1 id="random-website">Random Website</h1></center>
   </div>
-  
-  <script type="module" src="ads.js"></script>
   <script>
-    const randomWebsite = window.randomWebsite;
-    console.log(randomWebsite);
-    document.getElementById('random-website').innerHTML = randomWebsite;
-  </script>
+  const getRandomWebsite = () => {
+    const websites = [
+      'https://google.com',
+      'https://yahoo.com',
+      'https://bing.com',
+      'https://duckduckgo.com',
+    ];
+    return websites[Math.floor(Math.random() * websites.length)];
+  };
+</script>
+
+<p>The randomly selected website is: <span id="random-website"></span></p>
+
+
 </body>
 </html>
