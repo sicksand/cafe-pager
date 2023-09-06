@@ -27,9 +27,11 @@
     ];
     return websites[Math.floor(Math.random() * websites.length)];
   };
+
+  const randomWebsite = getRandomWebsite();
 </script>
 
-<p>The randomly selected website is: <span id="random-website"></span></p>
+<p>The randomly selected website is: <span id="random-website"></span> = randomWebsite;</p>
 
 
 </body>
