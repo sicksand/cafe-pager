@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-theme="cupcake" lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -15,7 +15,7 @@
     body: 'Customer panggil 😀'
 })" class="btn btn-primary">Panggil Mokcik</button></center>
     <br />
-    <p>The randomly selected website is: <span id="random-website">Random Website</span></p>
+    <p>Klik <span id="random-website">Random Website</span></p>
 
   </div>
   <script>
@@ -30,7 +30,7 @@
   };
 
   const randomWebsite = getRandomWebsite();
-  document.getElementById('random-website').innerHTML = randomWebsite;
+  document.getElementById('random-website').innerHTML = '<a href="' + randomWebsite + '">' + randomWebsite + '</a>';
 </script>
 
 
