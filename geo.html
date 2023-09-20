@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geolocation Example</title>
+</head>
+<body>
+
+<div id="map"></div>
+
+<script>
+// Calculate the distance between two points using the haversine formula.
+function haversine(userLatitude, userLongitude, placeLatitude, placeLongitude) {
+  var R = 6371e3; // Earth's radius in meters
+  var lat1 = userLatitude * Math.PI / 180; // Convert latitudes to radians
+  var lat2 = placeLatitude * Math.PI / 180;
+
+  var dLat = (lat2 - lat1) / 2;
+  var dLon = (placeLongitude - userLongitude) * Math.PI / 180;
+
+  var a = Math.pow(Math.sin(dLat / 2), 2) + Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(dLon / 2), 2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+  var distance = R * c;
+  return distance;
+}
+
+// Check if the user is within 500 meters of a given location.
+function isWithin500Meters(userLatitude, userLongitude, placeLatitude, placeLongitude) {
+  var distance = haversine(userLatitude, userLongitude, placeLatitude, placeLongitude);
+  return distance < 500;
+}
+
+// Get the user's current location.
+navigator.geolocation.getCurrentPosition(function(position) {
+  // Get the user's latitude and longitude.
+  var userLatitude = position.coords.latitude;
+  var userLongitude = position.coords.longitude;
+
+  // Get the latitude and longitude of the place.
+  var placeLatitude = 37.7833; // Replace this with the latitude of the place you want to check.
+  var placeLongitude = -122.4167; // Replace this with the longitude of the place you want to check.
+
+  // Check if the user is within 500 meters of the place.
+  var isWithin500Meters = isWithin500Meters(userLatitude, userLongitude, placeLatitude, placeLongitude);
+
+  // If the user is within 500 meters of the place, then alert the user and proceed to the next page.
+  if (isWithin500Meters) {
+    alert("OK");
+    // Proceed to the next page.
+  } else {
+    alert("You are not within 500 meters of the place.");
+  }
+});
+</script>
+
+</body>
+</html>
