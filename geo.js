@@ -15,7 +15,10 @@ function haversine(userLatitude, userLongitude, placeLatitude, placeLongitude) {
 }
 
 navigator.geolocation.getCurrentPosition(function(position) {
- alert("reading loc..");
+ Swal.fire(
+  'Pokcik check location jap...',
+  'success'
+)
  // Get the user's latitude and longitude.
  var userLatitude = position.coords.latitude;
  var userLongitude = position.coords.longitude;
