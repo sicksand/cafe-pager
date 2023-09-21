@@ -36,7 +36,10 @@ navigator.geolocation.getCurrentPosition(function(position) {
   
   // Proceed to the next page.
  } else {
-  alert("Pokcik rasa korang takde kat cafe...");
+   Swal.fire(
+   'Pokcik rasa korang takde kat cafe',
+   'alert'
+ )
  
   // document.write("");
   // Redirects to the specified URL after 5 seconds
