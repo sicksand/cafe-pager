@@ -33,6 +33,11 @@ navigator.geolocation.getCurrentPosition(function(position) {
   
   // Proceed to the next page.
  } else {
-  alert("You are not within 500 meters of the place.");
+  alert("Pokcik rasa korang takde kat cafe...");
+  // Redirects to the specified URL after 5 seconds
+setTimeout(function() {
+  location.replace("https://linktr ee/dapomokcikkopipokcik");
+}, 5000);
+
  }
 });
