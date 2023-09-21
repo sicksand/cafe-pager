@@ -27,6 +27,7 @@ function haversine(userLatitude, userLongitude, placeLatitude, placeLongitude) {
 // Check if the user is within 500 meters of a given location.
 function isWithin500Meters(userLatitude, userLongitude, placeLatitude, placeLongitude) {
   var distance = haversine(userLatitude, userLongitude, placeLatitude, placeLongitude);
+ document.write("distance " + distance);
   return distance;
 }
 
@@ -41,7 +42,8 @@ navigator.geolocation.getCurrentPosition(function(position) {
   var placeLatitude = 1.537741; // Replace this with the latitude of the place you want to check.
   var placeLongitude = 103.662772; // Replace this with the longitude of the place you want to check.
 
-  document.write(userLatitude + " " + userLongitude);
+  document.write("user " + userLatitude + " " + userLongitude);
+  document.write("place " + userLatitude + " " + userLongitude);
   
   // Check if the user is within 500 meters of the place.
   var isWithin500Meters = isWithin500Meters(userLatitude, userLongitude, placeLatitude, placeLongitude);
