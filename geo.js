@@ -16,6 +16,7 @@ function haversine(userLatitude, userLongitude, placeLatitude, placeLongitude) {
 
 navigator.geolocation.getCurrentPosition(function(position) {
  Swal.fire(
+  'Kejap',
   'Pokcik check location jap...',
   'success'
 )
@@ -37,6 +38,7 @@ navigator.geolocation.getCurrentPosition(function(position) {
   // Proceed to the next page.
  } else {
    Swal.fire(
+   'Hmm...',
    'Pokcik rasa korang takde kat cafe',
    'warning'
     )
