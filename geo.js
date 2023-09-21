@@ -39,13 +39,14 @@ navigator.geolocation.getCurrentPosition(function(position) {
    Swal.fire(
    'Pokcik rasa korang takde kat cafe',
    'alert'
- )
+    )
+   // document.write("");
+   // Redirects to the specified URL after 5 seconds
+   setTimeout(function() {
+     location.replace("https://linktr.ee/dapomokcikkopipokcik");
+   }, 1000);
+  
+   }
  
-  // document.write("");
-  // Redirects to the specified URL after 5 seconds
-setTimeout(function() {
-  location.replace("https://linktr.ee/dapomokcikkopipokcik");
-}, 1000);
-
- }
+  
 });
