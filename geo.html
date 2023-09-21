@@ -32,6 +32,7 @@ function isWithin500Meters(userLatitude, userLongitude, placeLatitude, placeLong
 
 // Get the user's current location.
 navigator.geolocation.getCurrentPosition(function(position) {
+  alert("reading loc..");
   // Get the user's latitude and longitude.
   var userLatitude = position.coords.latitude;
   var userLongitude = position.coords.longitude;
