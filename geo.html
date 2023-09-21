@@ -46,9 +46,11 @@ navigator.geolocation.getCurrentPosition(function(position) {
   // If the user is within 500 meters of the place, then alert the user and proceed to the next page.
   if (isWithin500Meters) {
     alert("OK");
+    document.write("ok");
     // Proceed to the next page.
   } else {
     alert("You are not within 500 meters of the place.");
+    document.write("far");
   }
 });
 </script>
