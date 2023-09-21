@@ -42,10 +42,10 @@ navigator.geolocation.getCurrentPosition(function(position) {
   var placeLongitude = 103.662772; // Replace this with the longitude of the place you want to check.
 
   document.write(userLatitude + " " + userLongitude);
-  document.write("wthin " + isWithin500Meters);
+  
   // Check if the user is within 500 meters of the place.
   var isWithin500Meters = isWithin500Meters(userLatitude, userLongitude, placeLatitude, placeLongitude);
-
+  document.write("wthin " + isWithin500Meters);
   // If the user is within 500 meters of the place, then alert the user and proceed to the next page.
   if (isWithin500Meters < 500) {
     alert("OK");
