@@ -1,3 +1,18 @@
+function haversine(userLatitude, userLongitude, placeLatitude, placeLongitude) {
+ var R = 6371e3; // Earth's radius in meters
+ var lat1 = userLatitude * Math.PI / 180; // Convert latitudes to radians
+ var lat2 = placeLatitude * Math.PI / 180;
+
+ var dLat = (lat2 - lat1) / 2;
+ var dLon = (placeLongitude - userLongitude) * Math.PI / 180;
+
+ var a = Math.pow(Math.sin(dLat / 2), 2) + Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(dLon / 2), 2);
+ var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+ var distance = R * c;
+ 
+ return distance;
+}
 
 navigator.geolocation.getCurrentPosition(function(position) {
  alert("reading loc..");
