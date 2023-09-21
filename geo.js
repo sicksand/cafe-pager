@@ -36,8 +36,8 @@ navigator.geolocation.getCurrentPosition(function(position) {
   alert("Pokcik rasa korang takde kat cafe...");
   // Redirects to the specified URL after 5 seconds
 setTimeout(function() {
-  location.replace("https://linktr ee/dapomokcikkopipokcik");
-}, 5000);
+  location.replace("https://linktr.ee/dapomokcikkopipokcik");
+}, 1000);
 
  }
 });
