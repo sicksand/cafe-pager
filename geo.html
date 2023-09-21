@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+by<!DOCTYPE html>
 <html>
 <head>
 <title>Geolocation Example</title>
@@ -21,6 +21,7 @@ function haversine(userLatitude, userLongitude, placeLatitude, placeLongitude) {
  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
  var distance = R * c;
+ document.write("<br />Distance " + distance);
  return distance;
 }
 
@@ -46,7 +47,7 @@ navigator.geolocation.getCurrentPosition(function(position) {
  document.write("place " + placeLatitude + " " + placeLongitude);
  
  // Check if the user is within 500 meters of the place.
- var isWithin500Meters = isWithin500Meters(userLatitude, userLongitude, placeLatitude, placeLongitude);
+ var isWithin500Meters = haversine(userLatitude, userLongitude, placeLatitude, placeLongitude);
   
  // If the user is within 500 meters of the place, then alert the user and proceed to the next page.
  if (isWithin500Meters < 500) {
