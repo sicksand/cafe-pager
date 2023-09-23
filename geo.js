@@ -33,7 +33,7 @@ navigator.geolocation.getCurrentPosition(function(position) {
   
  // If the user is within 500 meters of the place, then alert the user and proceed to the next page.
  if (isWithin500Meters < 500) {
-  alert("OK");
+  //alert("OK");
   
   // Proceed to the next page.
  } else {
