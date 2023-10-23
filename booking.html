@@ -12,7 +12,7 @@
     <div class="row">
       <div class="col-md-12">
         <h1>eboy trans logictic</h1>
-        <form action="https://wa.me/60127277015?text=" method="post">
+        <form action="https://wa.me/60127277015?text=" method="post" onsubmit="combineFormInputs()">
           <div class="form-group">
             <label for="name">Nama</label>
             <input type="text" class="form-control" name="name" placeholder="Nama">
@@ -50,23 +50,26 @@
             <label for="return_time">Time (return)</label>
             <input type="time" class="form-control" name="return_time" placeholder="Time (return)">
           </div>
-          <input type="hidden" name="text" value="
-    Nama : {{ name }}
-    Pickup point : {{ pickup_point }}
-    Date pickup : {{ pickup_date }}
-    Time pickup : {{ pickup_time }}
-    No Fon : {{ phone_number }}
-    Destination : {{ destination }}
-    Pax(people) : {{ pax }}
-    Date (return) : {{ return_date }}
-    Time (return) : {{ return_time }}
-  ">
+
           <input type="submit" class="btn btn-primary" value="Submit">
         </form>
       </div>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script>
+    function combineFormInputs() {
+      var form = document.querySelector('form');
+      var formData = new FormData(form);
+
+      var combinedFormData = '';
+      for (var key of formData.keys()) {
+        combinedFormData += key + ': ' + formData.get(key) + '\n';
+      }
+
+      var textInput = form.querySelector('input[name="text"]');
+      textInput.value = combinedFormData;
+    }
+  </script>
 </body>
 </html>
