@@ -50,7 +50,17 @@
             <label for="return_time">Time (return)</label>
             <input type="time" class="form-control" name="return_time" placeholder="Time (return)">
           </div>
-
+          <input type="hidden" name="text" value="
+    Nama : {{ name }}
+    Pickup point : {{ pickup_point }}
+    Date pickup : {{ pickup_date }}
+    Time pickup : {{ pickup_time }}
+    No Fon : {{ phone_number }}
+    Destination : {{ destination }}
+    Pax(people) : {{ pax }}
+    Date (return) : {{ return_date }}
+    Time (return) : {{ return_time }}
+  ">
           <input type="submit" class="btn btn-primary" value="Submit">
         </form>
       </div>
